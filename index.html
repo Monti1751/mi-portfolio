@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Fran Montesinos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div id="header">
+  <h1>Fran <span>Monti</span></h1>
+  <div id="skills">
+    <span class="skill-badge">Flutter / Dart</span>
+    <span class="skill-badge">Java & C#</span>
+    <span class="skill-badge">Python</span>
+    <span class="skill-badge">JavaScript</span>
+  </div>
+</div>
+
+<div id="hint">↑ Click en un objeto para ver el proyecto</div>
+
+<div id="tooltip"></div>
+
+<div id="modal-backdrop">
+  <div id="modal">
+    <button id="modal-close" aria-label="Cerrar">✕</button>
+    <div id="modal-icon"></div>
+    <div id="modal-title"></div>
+    <div id="modal-type"></div>
+    <div id="modal-desc"></div>
+    <div id="modal-tags"></div>
+    <div id="modal-links"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
