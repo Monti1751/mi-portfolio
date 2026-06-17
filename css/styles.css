@@ -36,6 +36,8 @@ canvas { display: block; }
 #skills {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .skill-badge {
@@ -61,6 +63,7 @@ canvas { display: block; }
   animation: pulse 3s ease-in-out infinite;
   pointer-events: none;
   z-index: 10;
+  white-space: nowrap;
 }
 
 @keyframes pulse {
@@ -78,6 +81,7 @@ canvas { display: block; }
   z-index: 100;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
 #modal-backdrop.open {
@@ -90,9 +94,11 @@ canvas { display: block; }
   border-radius: 16px;
   padding: 2.5rem;
   max-width: 480px;
-  width: 90%;
+  width: 100%;
   position: relative;
   animation: modalIn 0.25s ease;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 @keyframes modalIn {
@@ -110,6 +116,8 @@ canvas { display: block; }
   cursor: pointer;
   line-height: 1;
   transition: color 0.2s;
+  /* área táctil ampliada */
+  padding: 0.5rem;
 }
 
 #modal-close:hover { color: #fff; }
@@ -205,4 +213,93 @@ canvas { display: block; }
   display: none;
   z-index: 50;
   transition: opacity 0.15s;
+}
+
+/* ── Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 1.2rem 1.2rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+  }
+
+  #header h1 {
+    font-size: 1.2rem;
+  }
+
+  #skills {
+    gap: 0.4rem;
+  }
+
+  .skill-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  #hint {
+    font-size: 0.7rem;
+    bottom: 1.5rem;
+    letter-spacing: 0.06em;
+  }
+
+  #modal {
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+  }
+}
+
+/* ── Móvil (≤ 480px) ── */
+@media (max-width: 480px) {
+  #header {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  #header h1 {
+    font-size: 1.05rem;
+  }
+
+  .skill-badge {
+    font-size: 0.6rem;
+    padding: 3px 7px;
+  }
+
+  #hint {
+    font-size: 0.65rem;
+    bottom: 1.2rem;
+  }
+
+  /* En móvil el hint cambia el texto a táctil */
+  #hint::before {
+    content: "👆 ";
+  }
+
+  #modal {
+    padding: 1.8rem 1.2rem 1.5rem;
+    border-radius: 12px;
+    max-height: 85vh;
+  }
+
+  #modal-icon {
+    font-size: 2rem;
+  }
+
+  #modal-title {
+    font-size: 1.15rem;
+  }
+
+  #modal-desc {
+    font-size: 0.88rem;
+  }
+
+  #modal-links {
+    flex-direction: column;
+  }
+
+  /* Ocultar tooltip en táctil (se muestra el modal directamente) */
+  #tooltip {
+    display: none !important;
+  }
 }

@@ -44,9 +44,11 @@ function updatePointer(e) {
   tooltip.style.top = y + 16 + "px";
 }
 
+const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
+
 window.addEventListener("mousemove", updatePointer);
 
-window.addEventListener("click", (e) => {
+function handleSelect(e) {
   if (isModalOpen()) return;
   updatePointer(e);
   raycaster.setFromCamera(pointer, camera);
@@ -56,7 +58,25 @@ window.addEventListener("click", (e) => {
     const root = obj.parent?.userData?.project ? obj.parent : obj;
     if (root.userData?.project) openModal(root.userData.project);
   }
-});
+}
+
+window.addEventListener("click", handleSelect);
+
+// Soporte táctil: tap para abrir modal
+window.addEventListener("touchstart", (e) => {
+  updatePointer(e);
+}, { passive: true });
+
+window.addEventListener("touchend", (e) => {
+  handleSelect(e.changedTouches[0]);
+}, { passive: true });
+
+// Parallax táctil: mover la cámara al arrastrar
+window.addEventListener("touchmove", (e) => {
+  const touch = e.touches[0];
+  mouseX = (touch.clientX / innerWidth - 0.5) * 2;
+  mouseY = (touch.clientY / innerHeight - 0.5) * 2;
+}, { passive: true });
 
 // Parallax de cámara
 let camTargetX = 0,

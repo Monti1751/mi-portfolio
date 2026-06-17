@@ -20,6 +20,15 @@
 
 <div id="hint">↑ Click en un objeto para ver el proyecto</div>
 
+<script>
+  // Hint dinámico según dispositivo
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.matchMedia('(hover: none)').matches) {
+      document.getElementById('hint').textContent = '👆 Toca un objeto para ver el proyecto';
+    }
+  });
+</script>
+
 <div id="tooltip"></div>
 
 <div id="modal-backdrop">
