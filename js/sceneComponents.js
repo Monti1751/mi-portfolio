@@ -52,12 +52,12 @@ export function createNebulae(scene) {
 
 export function createProjectMeshes(scene, projects) {
   const GEOMETRIES = [
-    new THREE.IcosahedronGeometry(1.1, 0),
-    new THREE.OctahedronGeometry(1.2, 0),
-    new THREE.TetrahedronGeometry(1.25, 0),
-    new THREE.DodecahedronGeometry(1.0, 0),
-    new THREE.IcosahedronGeometry(0.95, 1),
-    new THREE.OctahedronGeometry(1.1, 0),
+    new THREE.TorusKnotGeometry(1.0, 0.35, 100, 16),   // MonGit
+    new THREE.DodecahedronGeometry(1.8, 0),              // Colordary
+    new THREE.TetrahedronGeometry(2.2, 0),               // EZBar
+    new THREE.IcosahedronGeometry(1.9, 0),               // DopiGame
+    new THREE.OctahedronGeometry(2.0, 0),                // Montimod
+    new THREE.TorusGeometry(1.3, 0.5, 16, 80),          // Odoo
   ];
 
   const projectMeshes = [];

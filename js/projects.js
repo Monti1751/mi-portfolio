@@ -7,7 +7,7 @@ export const PROJECTS = [
     tags: ["JavaScript", "Git CLI"],
     github: "https://github.com/Monti1751/MonGit",
     demo: "",
-    color: 0xf1e05a
+    color: 0xFFD700  // oro vibrante
   },
   {
     icon: "📔",
@@ -17,7 +17,7 @@ export const PROJECTS = [
     tags: ["Dart", "Flutter", "Biometría"],
     github: "https://github.com/Monti1751/Colordary",
     demo: "",
-    color: 0x00B4AB
+    color: 0x00EEFF  // cian eléctrico
   },
   {
     icon: "🍻",
@@ -27,7 +27,7 @@ export const PROJECTS = [
     tags: ["Java", "C#", "Dart"],
     github: "https://github.com/Monti1751/EZBar_app",
     demo: "",
-    color: 0xb07219
+    color: 0xFF5500  // naranja fuego
   },
   {
     icon: "☕",
@@ -37,7 +37,7 @@ export const PROJECTS = [
     tags: ["Dart", "Flutter", "Gamificación"],
     github: "https://github.com/Monti1751/DopiGame",
     demo: "",
-    color: 0x2dbf8a
+    color: 0x00FF88  // verde neón
   },
   {
     icon: "🃏",
@@ -47,7 +47,7 @@ export const PROJECTS = [
     tags: ["Lua", "Game Design", "Modding"],
     github: "https://github.com/Monti1751/Montimod",
     demo: "",
-    color: 0x000080
+    color: 0xFF1493  // rosa magenta
   },
   {
     icon: "🧪",
@@ -57,6 +57,6 @@ export const PROJECTS = [
     tags: ["Python", "Odoo", "ERP"],
     github: "https://github.com/Monti1751/odoo_laboratorio_instituto",
     demo: "",
-    color: 0x3572A5
+    color: 0xAA44FF  // violeta intenso
   }
 ];
